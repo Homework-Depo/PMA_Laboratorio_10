@@ -19,12 +19,12 @@ struct AlbumCardView: View {
     var textWidth: CGFloat = 114
     
     var body: some View {
-
+        VStack {
             Image(image)
                 .resizable()
                 .frame(width: width, height: height)
             TextView(text: text, color: color, size: size).lineLimit(3).frame(width: textWidth, alignment: .leading)
-        
+        }
     }
 }
 
