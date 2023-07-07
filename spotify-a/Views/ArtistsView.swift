@@ -10,6 +10,7 @@ import SwiftUI
 struct ArtistsView: View {
     
     @StateObject var artistsViewModel = ArtistsViewModel()
+    @StateObject var artistAlbumsViewModel = ArtistAlbumsViewModel()
     
     var body: some View {
         ZStack{
@@ -103,6 +104,8 @@ struct ArtistsView: View {
         }.onAppear {
             Task {
                 artistsViewModel.artists = await RequestAPI.getArtists()
+                artistAlbumsViewModel.artistAlbums = await RequestAPI.getArtistAlbums(id: "0TnOYISbd1XYRBk9myaseg")
+                print(artistAlbumsViewModel.artistAlbums)
             }
         }
     }

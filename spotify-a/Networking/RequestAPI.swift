@@ -61,5 +61,23 @@ class RequestAPI {
         }
         return nil
     }
+    
+    static func getArtistAlbums(id: String) async -> ArtistAlbums? {
+        let artistAlbumsEndpoint = "https://api.spotify.com/v1/artists/\(id)/albums?limit=8"
+        guard let url = URL(string: artistAlbumsEndpoint) else { return nil }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue( "Bearer " + (UserDefaults.standard.string(forKey: "access_token") ?? ""), forHTTPHeaderField: "Authorization")
+        do {
+            let (data, _) = try await URLSession.shared.data(for: request)
+            if let albums = try? JSONDecoder().decode(ArtistAlbums.self, from: data) {
+                return albums
+            }
+        } catch let error {
+            print("Error")
+            print (error.localizedDescription)
+        }
+        return nil
+    }
 }
 

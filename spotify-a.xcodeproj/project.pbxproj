@@ -29,6 +29,8 @@
 		5DBC19F12A586CE700B7E5CD /* ArtistsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC19F02A586CE700B7E5CD /* ArtistsViewModel.swift */; };
 		5DBC19F32A58702600B7E5CD /* ArtistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC19F22A58702600B7E5CD /* ArtistsView.swift */; };
 		5DBC19F52A58727A00B7E5CD /* Artists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC19F42A58727A00B7E5CD /* Artists.swift */; };
+		5DBC19F72A5881C000B7E5CD /* ArtistAlbums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC19F62A5881C000B7E5CD /* ArtistAlbums.swift */; };
+		5DBC19FB2A5883EF00B7E5CD /* ArtistAlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBC19FA2A5883EF00B7E5CD /* ArtistAlbumsViewModel.swift */; };
 		5DC81F832A3CE40B00DC633F /* LikedSongsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC81F822A3CE40B00DC633F /* LikedSongsView.swift */; };
 		5DC81F852A3CEA8A00DC633F /* SongItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC81F842A3CEA8A00DC633F /* SongItem.swift */; };
 		5DC81F872A3CF81B00DC633F /* ChipTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC81F862A3CF81B00DC633F /* ChipTextView.swift */; };
@@ -63,6 +65,8 @@
 		5DBC19F02A586CE700B7E5CD /* ArtistsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsViewModel.swift; sourceTree = "<group>"; };
 		5DBC19F22A58702600B7E5CD /* ArtistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsView.swift; sourceTree = "<group>"; };
 		5DBC19F42A58727A00B7E5CD /* Artists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artists.swift; sourceTree = "<group>"; };
+		5DBC19F62A5881C000B7E5CD /* ArtistAlbums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistAlbums.swift; sourceTree = "<group>"; };
+		5DBC19FA2A5883EF00B7E5CD /* ArtistAlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistAlbumsViewModel.swift; sourceTree = "<group>"; };
 		5DC81F822A3CE40B00DC633F /* LikedSongsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedSongsView.swift; sourceTree = "<group>"; };
 		5DC81F842A3CEA8A00DC633F /* SongItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongItem.swift; sourceTree = "<group>"; };
 		5DC81F862A3CF81B00DC633F /* ChipTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipTextView.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				5D7E27762A4F5DB80077822D /* Authorization.swift */,
 				5D7E277B2A4F601C0077822D /* Albums.swift */,
 				5DBC19F42A58727A00B7E5CD /* Artists.swift */,
+				5DBC19F62A5881C000B7E5CD /* ArtistAlbums.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 				5D7312352A46306E001EBF47 /* ProfileViewModel.swift */,
 				5D7E277D2A4F620A0077822D /* HomeViewModel.swift */,
 				5DBC19F02A586CE700B7E5CD /* ArtistsViewModel.swift */,
+				5DBC19FA2A5883EF00B7E5CD /* ArtistAlbumsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -289,12 +295,14 @@
 				5D06559C2A33BDFA00BE90E3 /* TextField.swift in Sources */,
 				5D18A7882A2A8A8A006B739D /* AppState.swift in Sources */,
 				5D0655982A33BC4400BE90E3 /* SignInView.swift in Sources */,
+				5DBC19FB2A5883EF00B7E5CD /* ArtistAlbumsViewModel.swift in Sources */,
 				5D06559E2A33C44B00BE90E3 /* SignInViewModel.swift in Sources */,
 				5DBC19F52A58727A00B7E5CD /* Artists.swift in Sources */,
 				5D7E277A2A4F5E890077822D /* RequestAPI.swift in Sources */,
 				5D7312322A4621FC001EBF47 /* ProfileView.swift in Sources */,
 				5D18A7862A2A7CA5006B739D /* AlbumCardView.swift in Sources */,
 				5D7E27772A4F5DB80077822D /* Authorization.swift in Sources */,
+				5DBC19F72A5881C000B7E5CD /* ArtistAlbums.swift in Sources */,
 				5D18A7842A2A75DC006B739D /* TextView.swift in Sources */,
 				5DC81F832A3CE40B00DC633F /* LikedSongsView.swift in Sources */,
 				5D7312362A46306E001EBF47 /* ProfileViewModel.swift in Sources */,
