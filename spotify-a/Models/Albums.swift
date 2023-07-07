@@ -26,6 +26,11 @@ public struct Album: Codable {
     let tracks: Tracks
 }
 
+// MARK: - Artists
+public struct Artists: Codable {
+    let artists: [Artist]
+}
+
 // MARK: - Artist
 public struct Artist: Codable {
     let external_urls: ExternalUrls

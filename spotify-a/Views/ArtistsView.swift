@@ -1,13 +1,16 @@
 //
-//  ArtitsView.swift
+//  ArtistsView.swift
 //  spotify-a
 //
-//  Created by MAC45 on 16/06/23.
+//  Created by Javier Aponte on 7/07/23.
 //
 
 import SwiftUI
 
-struct ArtitsView: View {
+struct ArtistsView: View {
+    
+    @StateObject var artistsViewModel = ArtistsViewModel()
+    
     var body: some View {
         ZStack{
             Color("dark")
@@ -95,16 +98,18 @@ struct ArtitsView: View {
                             }
                         }
                     }
-                    
-                    
-                    
-                }}
+                }
+            }
+        }.onAppear {
+            Task {
+                artistsViewModel.artists = await RequestAPI.getArtists()
+            }
         }
     }
-    
-    struct ArtitsView_Previews: PreviewProvider {
-        static var previews: some View {
-            ArtitsView()
-        }
+}
+
+struct ArtistsView_Previews: PreviewProvider {
+    static var previews: some View {
+        ArtistsView()
     }
 }
