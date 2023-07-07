@@ -9,10 +9,10 @@ import Foundation
 
 struct ArtistAlbums: Codable {
     let total: Int
-    let items: [ArtistAlbumItem]
+    let items: [SimplifiedAlbum]
 }
 
-struct ArtistAlbumItem: Codable {
+struct SimplifiedAlbum: Codable {
     let name: String
     let images: [SuperImage]
     let artists: [SimplifiedArtist]
