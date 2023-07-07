@@ -18,6 +18,15 @@ struct MainView: View {
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
+            
+            LikedSongsView()
+                .tabItem {
+                    Label("Library", systemImage: "books.vertical.fill")
+                }
+            ProfileView()
+                .tabItem {
+                    Label("Settings", systemImage: "gear")
+                }
         }.accentColor(.white)
     }
 }

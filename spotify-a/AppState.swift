@@ -15,6 +15,7 @@ class AppState: ObservableObject {
         case launch
         case signIn
         case main
+        case likedSongs
     }
     
     @Published var currentScreen: AppScreens = .launch

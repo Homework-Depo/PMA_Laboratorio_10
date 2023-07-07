@@ -9,8 +9,10 @@ import SwiftUI
 
 @main
 struct spotify_aApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     @StateObject var appState: AppState = .shared
+    
     var body: some Scene {
         WindowGroup {
             switch appState.currentScreen {
@@ -18,12 +20,16 @@ struct spotify_aApp: App {
                 LaunchView()
                     .environmentObject(appState)
             case .signIn:
-                MainView()
+                SignInView()
                     .environmentObject(appState)
             case .main:
                 MainView()
                     .environmentObject(appState)
+            case .likedSongs:
+                LikedSongsView()
+                    .environmentObject(appState)
             }
+        
         }
     }
 }

@@ -13,6 +13,9 @@ class LaunchViewModel: ObservableObject {
     
     init() {
         print("ESTAMOS EN EL LAUNCHVIEW")
+        Task {
+            await RequestAPI.getToken()
+        }
         appState.currentScreen = .main
     }
 }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var homeViewModel: HomeViewModel = HomeViewModel()
+    
     var body: some View {
         ZStack {
             Color("dark")
@@ -33,14 +35,24 @@ struct HomeView: View {
                     TextView(text: "To get you started")
                         .frame(maxWidth: .infinity, alignment: .leading)
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 15) {
-                            AlbumCardView(image: "dailymix2", text: "Drake, Michael Jackson, Dua Lipa and more", width: 144, height: 144, color: Color("spotifygrey"), textWidth: 144)
-                            AlbumCardView(image: "dailymix1", text: "Justin Bieber, Michael Jackson, Dua Lipa and more", width: 144, height: 144, color: Color("spotifygrey"), textWidth: 144)
-                            AlbumCardView(image: "dailymix2", text: "The Weeknd, Michael Jackson, Dua Lipa and more", width: 144, height: 144, color: Color("spotifygrey"), textWidth: 144)
+                        if homeViewModel.albums?.albums != nil {
+                            HStack(spacing: 15) {
+                                ForEach(homeViewModel.albums!.albums, id: \.id) {
+                                    album in
+                                    AlbumCardView(image: album.images[0].url, text: album.name, width: 144, height: 144, color: Color("spotifygrey"), textWidth: 144)
+                                }
+                                /*AlbumCardView(image: "dailymix2", text: "Drake, Michael Jackson, Dua Lipa and more", width: 144, height: 144, color: Color("spotifygrey"), textWidth: 144)
+                                 AlbumCardView(image: "dailymix1", text: "Justin Bieber, Michael Jackson, Dua Lipa and more", width: 144, height: 144, color: Color("spotifygrey"), textWidth: 144)
+                                 AlbumCardView(image: "dailymix2", text: "The Weeknd, Michael Jackson, Dua Lipa and more", width: 144, height: 144, color: Color("spotifygrey"), textWidth: 144)*/
+                            }
                         }
                     }
                 }
             }.padding()
+        }.onAppear {
+            Task {
+                homeViewModel.albums = await RequestAPI.getAlbums()
+            }
         }
     }
 }

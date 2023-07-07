@@ -20,9 +20,11 @@ struct AlbumCardView: View {
     
     var body: some View {
         VStack {
-            Image(image)
-                .resizable()
-                .frame(width: width, height: height)
+            AsyncImage(url: URL(string: image)) { img in
+                img.resizable()
+            } placeholder: {
+                ProgressView()
+            }.frame(width: width, height: height)
             TextView(text: text, color: color, size: size).lineLimit(3).frame(width: textWidth, alignment: .leading)
         }
     }
